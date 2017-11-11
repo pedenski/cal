@@ -13,45 +13,29 @@ $z = $logs->getDates();
 
 echo "<br>";
 $x = $logs->countEntries();
+foreach($x as $xx => $kk) {
+    echo $kk['date']."<br>";
+}
+
+echo "<br>";
 
 
 
 date_default_timezone_set('Asia/Manila');
 
 $list=array();
-
+echo date('t');
 $month = date('m');
 $year = date('y');
 
-$today = date('d');
-if($today <= 15) {
 
-    for($d=1; $d<=15; $d++)
-    {
+
+for($d=1; $d<=30; $d++)
+{
     $time=mktime(12, 0, 0, $month, $d, $year);          
     if (date('m', $time)==$month)       
         $list[]=date('d', $time);
-    }
-
-} else {
-
-    for($d=16; $d<=30; $d++)
-    {
-    $time=mktime(12, 0, 0, $month, $d, $year);          
-    if (date('m', $time)==$month)       
-        $list[]=date('d', $time);
-    }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -108,11 +92,11 @@ $days = implode("','",$list);
 </head>
 <body>
 
-    <div class="chart-container">
-        <canvas id="line-chartcanvas"></canvas>
-    </div>
+	<div class="chart-container">
+		<canvas id="line-chartcanvas"></canvas>
+	</div>
 
-    <!-- javascript -->
+	<!-- javascript -->
     <script src="js/moment.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/Chart.min.js"></script>

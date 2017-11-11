@@ -7,7 +7,7 @@ $(document).ready(function() {
 		labels : [<?php echo "'$days'"; ?>],
 		datasets : [
 			{
-				label : "Log Entries",
+				label : "<?php echo date('M'); ?>",
 				data :  <?php print json_encode($arr); ?>,
 				backgroundColor : "rgba(233, 62, 62, 0.45)",
 				borderColor : "#FF3860",

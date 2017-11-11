@@ -44,7 +44,7 @@ class Logs {
 
     public function countEntries()
     {
-        $this->id = 2;
+        $this->id = 1;
         $q = "SELECT COUNT(1) AS count, DATE(LogDate) as date FROM activity_log WHERE ActyID = ? GROUP BY DATE(LogDate)";
         $sql = $this->conn->prepare($q);
         $sql->bindParam(1, $this->id);
